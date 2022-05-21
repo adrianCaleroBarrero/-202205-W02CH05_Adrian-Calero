@@ -15,8 +15,6 @@ let mapGameOfLife2 = [...mapGameOfLife].map((row) => [...row]);
 
 function loadArrayAnRepeat() {
   checkIfIsLive(mapGameOfLife, mapGameOfLife2);
-  console.log(mapGameOfLife);
-  console.log(mapGameOfLife2);
 }
 mapGameOfLife = mapGameOfLife2;
 
