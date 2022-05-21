@@ -1,11 +1,15 @@
+import { checkIfIsLive } from './check.js';
 import { sortGerm } from './sort.js';
 
 let mapGameOfLife = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
-let sortTable = sortGerm(mapGameOfLife);
+sortGerm(mapGameOfLife);
+console.log(mapGameOfLife);
 
-console.log(sortTable);
+checkIfIsLive(mapGameOfLife);

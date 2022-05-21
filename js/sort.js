@@ -4,5 +4,4 @@ export function sortGerm(array) {
       array[i][j] = Math.round(Math.random());
     }
   }
-  console.log(array);
 }
