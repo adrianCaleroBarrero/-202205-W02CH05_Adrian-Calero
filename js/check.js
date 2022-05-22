@@ -1,6 +1,7 @@
 import { deathOrLive } from './liveOrDeath.js';
 
 export function checkIfIsLive(array, arrayCopy) {
+  debugger;
   let counter = 0;
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
@@ -64,6 +65,56 @@ export function checkIfIsLive(array, arrayCopy) {
             if (array[i][j] === array[i - 1][j + 1]) {
               counter++;
             }
+          }
+          if (i === 0 && j > 0) {
+            if (array[i][j] === array[i + 1][j - 1]) {
+              counter++;
+            }
+            if (array[i][j] === array[i][j - 1]) {
+              counter++;
+            }
+          }
+          if (i > 0 && j === 0) {
+            if (array[i][j] === array[i - 1][j]) {
+              counter++;
+            }
+            if (array[i][j] === array[i - 1][j + 1]) {
+              counter++;
+            }
+          }
+        }
+        if (i === array.length - 1 && j < array.length - 1 && j > 0) {
+          if (array[i][j] === array[i - 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i - 1][j]) {
+            counter++;
+          }
+          if (array[i][j] === array[i][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i - 1][j + 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i][j + 1]) {
+            counter++;
+          }
+        }
+        if (i < array.length - 1 && j === array.length - 1 && i > 0) {
+          if (array[i][j] === array[i - 1][j]) {
+            counter++;
+          }
+          if (array[i][j] === array[i][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i - 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i + 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] === array[i + 1][j]) {
+            counter++;
           }
         }
 
@@ -131,8 +182,57 @@ export function checkIfIsLive(array, arrayCopy) {
               counter++;
             }
           }
+          if (i === 0 && j > 0) {
+            if (array[i][j] !== array[i + 1][j - 1]) {
+              counter++;
+            }
+            if (array[i][j] !== array[i][j - 1]) {
+              counter++;
+            }
+          }
+          if (i > 0 && j === 0) {
+            if (array[i][j] !== array[i - 1][j]) {
+              counter++;
+            }
+            if (array[i][j] !== array[i - 1][j + 1]) {
+              counter++;
+            }
+          }
         }
-
+        if (i === array.length - 1 && j < array.length - 1 && j > 0) {
+          if (array[i][j] !== array[i - 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i - 1][j]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i - 1][j + 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i][j + 1]) {
+            counter++;
+          }
+        }
+        if (i < array.length - 1 && j === array.length - 1 && i > 0) {
+          if (array[i][j] !== array[i - 1][j]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i - 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i + 1][j - 1]) {
+            counter++;
+          }
+          if (array[i][j] !== array[i + 1][j]) {
+            counter++;
+          }
+        }
         deathOrLive(counter, arrayCopy, [i, j]);
         counter = 0;
       }
