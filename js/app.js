@@ -149,8 +149,7 @@ function loadArrayAnRepeat() {
 function game() {
   time = setInterval(loadArrayAnRepeat, 120);
   play.disabled = true;
-  if (finished === true) {
-  }
+  stop.disabled = false;
 }
 
 function start() {
@@ -159,6 +158,7 @@ function start() {
 function stopper() {
   clearInterval(time);
   play.disabled = false;
+  stop.disabled = true;
 }
 
 function finish() {
