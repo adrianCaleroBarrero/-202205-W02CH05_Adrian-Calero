@@ -1,5 +1,4 @@
 export function deathOrLive(counter, array, coord) {
-  array[coord[0]][coord[1]];
   if (array[coord[0]][coord[1]] === 1) {
     if (counter < 2 || counter > 3) {
       array[coord[0]][coord[1]] = 0;
