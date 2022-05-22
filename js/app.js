@@ -127,9 +127,13 @@ let mapGameOfLife = [
 sortGerm(mapGameOfLife);
 
 let mapGameOfLife2 = [...mapGameOfLife].map((row) => [...row]);
-let square = document.querySelectorAll('.square');
+let play = document.querySelector('#play');
+let stop = document.querySelector('#stop');
+let finished = false;
+let time;
 
 function loadArrayAnRepeat() {
+  let square = document.querySelectorAll('.square');
   for (let i = 0; i < mapGameOfLife.length; i++) {
     for (let j = 0; j < mapGameOfLife.length; j++) {
       if (mapGameOfLife[i][j] === 1) {
@@ -142,5 +146,23 @@ function loadArrayAnRepeat() {
   checkIfIsLive(mapGameOfLife, mapGameOfLife2);
   mapGameOfLife = mapGameOfLife2;
 }
+function game() {
+  time = setInterval(loadArrayAnRepeat, 120);
+  play.disabled = true;
+  if (finished === true) {
+  }
+}
 
-setInterval(loadArrayAnRepeat, 120);
+function start() {
+  play.addEventListener('click', game);
+}
+function stopper() {
+  clearInterval(time);
+  play.disabled = false;
+}
+
+function finish() {
+  stop.addEventListener('click', stopper);
+}
+start();
+finish();
