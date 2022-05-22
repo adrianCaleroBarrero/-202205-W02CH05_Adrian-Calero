@@ -6,9 +6,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .big-square {
@@ -16,13 +18,9 @@ body {
   height: 60vh;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
-}
-.big-square__child {
-  border: 1px solid red;
+  background-color: #f6e7cb;
 }
 .big-square .square {
-  border: 1px solid red;
   height: 100%;
   display: flex;
 }
@@ -31,5 +29,6 @@ body {
 }
 
 .color {
-  background-color: blueviolet;
+  border-radius: 50%;
+  background-color: #678d58;
 }

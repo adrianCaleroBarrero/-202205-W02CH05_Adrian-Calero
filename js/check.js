@@ -1,7 +1,6 @@
 import { deathOrLive } from './liveOrDeath.js';
 
 export function checkIfIsLive(array, arrayCopy) {
-  debugger;
   let counter = 0;
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
@@ -39,7 +38,10 @@ export function checkIfIsLive(array, arrayCopy) {
             counter++;
           }
         }
-        if ((j < 4 && i < 4) || (i === 0 && j === 0)) {
+        if (
+          (j < array.length - 1 && i < array.length - 1) ||
+          (i === 0 && j === 0)
+        ) {
           if (array[i][j] === array[i][j + 1]) {
             counter++;
           }
@@ -155,7 +157,10 @@ export function checkIfIsLive(array, arrayCopy) {
             counter++;
           }
         }
-        if ((j < 4 && i < 4) || (i === 0 && j === 0)) {
+        if (
+          (j < array.length - 1 && i < array.length - 1) ||
+          (i === 0 && j === 0)
+        ) {
           if (array[i][j] !== array[i][j + 1]) {
             counter++;
           }
